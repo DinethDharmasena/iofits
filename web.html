@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loading...</title>
+
+<style>
+body{
+    margin:0;
+    background:#111;
+    color:white;
+    font-family:Arial,sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    text-align:center;
+}
+
+.container{
+    max-width:600px;
+    padding:20px;
+}
+
+img{
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    object-fit:cover;
+    margin:10px;
+    display:none;
+}
+
+#message{
+    display:none;
+    font-size:32px;
+    color:#00ff88;
+    margin-top:20px;
+}
+
+#joke{
+    display:none;
+    font-size:22px;
+    color:#ffd54f;
+    margin-top:15px;
+}
+
+@keyframes spinIn{
+    from{
+        transform:rotate(-360deg) scale(0);
+        opacity:0;
+    }
+    to{
+        transform:rotate(0deg) scale(1);
+        opacity:1;
+    }
+}
+
+#photo2{
+    animation:spinIn 1s ease;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2 id="loading">Analyzing...</h2>
+
+<img id="photo1" src="photo1.jpg" alt="Photo 1">
+<img id="photo2" src="photo2.jpg" alt="Photo 2">
+
+<div id="message">
+We know who you are... where u live...
+</div>
+
+<div id="joke">
+Payback time bitch
+</div>
+
+</div>
+
+<script>
+setTimeout(() => {
+
+    document.getElementById("loading").style.display = "none";
+
+    document.getElementById("photo1").style.display = "inline-block";
+
+    setTimeout(() => {
+
+        document.getElementById("photo2").style.display = "inline-block";
+        document.getElementById("message").style.display = "block";
+        document.getElementById("joke").style.display = "block";
+
+    }, 2000);
+
+}, 2000);
+</script>
+
+</body>
+</html>
